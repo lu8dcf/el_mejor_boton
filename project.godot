@@ -16,6 +16,11 @@ run/disable_stderr=true
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalMundo="*res://GlobalMundo.gd"
+IniciaVariables="*res://inicia_variables.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"
