@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3syt33pu4pbb"
-path="res://.godot/imported/10000-sheet.png-277b558449cffe5ebb6053da0ae4570f.ctex"
+path="res://.godot/imported/boton.png-13aa10d4642cdbcd192a82972a264d09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/graficos/hud/10000-sheet.png"
-dest_files=["res://.godot/imported/10000-sheet.png-277b558449cffe5ebb6053da0ae4570f.ctex"]
+source_file="res://recursos/graficos/hud/boton.png"
+dest_files=["res://.godot/imported/boton.png-13aa10d4642cdbcd192a82972a264d09.ctex"]
 
 [params]
 
