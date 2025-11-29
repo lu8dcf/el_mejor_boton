@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://u5hvva40qljd"]
+
+[ext_resource type="Texture2D" uid="uid://4vtj1rtgeud4" path="res://recursos/graficos/menu/boton/botonnormal.png" id="1_fne67"]
+[ext_resource type="Texture2D" uid="uid://rlakq413vmhv" path="res://recursos/graficos/menu/boton/botonapretado.png" id="2_2s6vn"]
+[ext_resource type="Texture2D" uid="uid://ewlbl7xvw8hk" path="res://recursos/graficos/menu/boton/botonfijado.png" id="3_xusyj"]
+[ext_resource type="AudioStream" uid="uid://c8nmpa8rcm7di" path="res://recursos/sonido/Fx_ButtonClick.mp3" id="4_fne67"]
+[ext_resource type="Script" uid="uid://dc4yas2qjrs70" path="res://menu/button.gd" id="4_xusyj"]
+[ext_resource type="AudioStream" uid="uid://bksolobx6aycv" path="res://recursos/sonido/Fx_ButtonOver.mp3" id="6_n7hxd"]
+
+[node name="button" type="TextureButton"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 13.0
+offset_right = 123.0
+offset_bottom = 81.0
+grow_horizontal = 2
+toggle_mode = true
+texture_normal = ExtResource("1_fne67")
+texture_pressed = ExtResource("2_2s6vn")
+texture_hover = ExtResource("3_xusyj")
+script = ExtResource("4_xusyj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fne67")
+volume_db = 2.943
+pitch_scale = 4.0
+autoplay = true
+
+[node name="over" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_n7hxd")
+volume_db = 3.925
+pitch_scale = 2.02
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

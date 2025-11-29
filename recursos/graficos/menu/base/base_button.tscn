@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://byg8a8fcllwna"]
+
+[ext_resource type="FontFile" uid="uid://bbufnohtiso2" path="res://assets/font/omega-pixel-biform.ttf" id="1_g3l2f"]
+[ext_resource type="Texture2D" uid="uid://drwdnuqbwk5qu" path="res://assets/graphics/menu_graphics/btn_hover.png" id="2_g4i27"]
+[ext_resource type="Texture2D" uid="uid://buniheagshvqx" path="res://assets/graphics/menu_graphics/btn_pressed.png" id="3_3f6ip"]
+[ext_resource type="Texture2D" uid="uid://jpr4scv8ow56" path="res://assets/graphics/menu_graphics/btn.png" id="4_7oap5"]
+[ext_resource type="AudioStream" uid="uid://wr31qbcajp16" path="res://assets/sound/menus_effects/Fx_ButtonClick.mp3" id="5_860mf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3f6ip"]
+texture = ExtResource("2_g4i27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7oap5"]
+texture = ExtResource("2_g4i27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p27ap"]
+texture = ExtResource("3_3f6ip")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vffwk"]
+texture = ExtResource("4_7oap5")
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_right = 38.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_g3l2f")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxTexture_3f6ip")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7oap5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p27ap")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vffwk")
+text = "btn"
+
+[node name="button_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_860mf")
+volume_db = 1.857
+pitch_scale = 4.0
+autoplay = true
+bus = &"Effects"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

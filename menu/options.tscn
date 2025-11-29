@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://6dg7bxwjo1du"]
 
-[ext_resource type="Script" uid="uid://bxyw3ladje3pb" path="res://scripts/options.gd" id="1_vrwnq"]
-[ext_resource type="Texture2D" uid="uid://bw561jd6a1cnq" path="res://assets/graphics/menu_graphics/fondo_menu.png" id="2_lu4uf"]
-[ext_resource type="PackedScene" uid="uid://c1lmerbku64rs" path="res://scenes/menu/base/base_label.tscn" id="2_mqi07"]
-[ext_resource type="PackedScene" uid="uid://b44h80jjvjjen" path="res://scenes/menu/base/base_panel.tscn" id="3_vhbmr"]
-[ext_resource type="Texture2D" uid="uid://dd0hp8artllj" path="res://assets/graphics/menu_graphics/switch_tuto.png" id="7_ilxmy"]
-[ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://scenes/menu/base/button.tscn" id="7_oiomh"]
-[ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://scenes/menu/base/label.tscn" id="8_5f8vx"]
-[ext_resource type="AudioStream" uid="uid://bi1vxedfbe4w" path="res://assets/sound/menus_effects/Audio_Menu.mp3" id="8_vbf1p"]
+[ext_resource type="Script" uid="uid://bdrq8sn7xyxmr" path="res://menu/options.gd" id="1_vrwnq"]
+[ext_resource type="Texture2D" uid="uid://jd5x051tk8nc" path="res://recursos/graficos/ikurosofttrans.png" id="2_lu4uf"]
+[ext_resource type="PackedScene" uid="uid://c1lmerbku64rs" path="res://recursos/graficos/menu/base/base_label.tscn" id="2_mqi07"]
+[ext_resource type="PackedScene" uid="uid://b44h80jjvjjen" path="res://recursos/graficos/menu/base/base_panel.tscn" id="3_vhbmr"]
+[ext_resource type="Texture2D" uid="uid://1ucyo3mb6t6x" path="res://recursos/graficos/menu/switch_tuto.png" id="7_ilxmy"]
+[ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://recursos/graficos/menu/base/button.tscn" id="7_oiomh"]
+[ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://recursos/graficos/menu/base/label.tscn" id="8_5f8vx"]
+[ext_resource type="AudioStream" uid="uid://bgyhq8is25n7p" path="res://recursos/sonido/tema.mp3" id="8_vbf1p"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -20,7 +20,8 @@ script = ExtResource("1_vrwnq")
 metadata/_edit_use_anchors_ = true
 
 [node name="FondoMenu" type="Sprite2D" parent="."]
-position = Vector2(480, 270)
+position = Vector2(878, 108)
+scale = Vector2(0.071, 0.065)
 texture = ExtResource("2_lu4uf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -133,6 +134,10 @@ theme_override_constants/separation = 100
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+texture_normal = null
+texture_pressed = null
+texture_hover = null
+script = null
 
 [node name="label" parent="panel_game/pantalla/HBoxContainer/btn_completa2" instance=ExtResource("8_5f8vx")]
 layout_mode = 1
@@ -151,6 +156,10 @@ text = "completa"
 
 [node name="btn_ventana2" parent="panel_game/pantalla/HBoxContainer" instance=ExtResource("7_oiomh")]
 layout_mode = 2
+texture_normal = null
+texture_pressed = null
+texture_hover = null
+script = null
 
 [node name="label" parent="panel_game/pantalla/HBoxContainer/btn_ventana2" instance=ExtResource("8_5f8vx")]
 layout_mode = 1
@@ -159,10 +168,10 @@ anchor_left = -0.232
 anchor_top = 0.0
 anchor_right = 1.134
 anchor_bottom = 1.096
-offset_left = 114.072
-offset_top = 14.6666
-offset_right = -88.9642
-offset_bottom = -25.3414
+offset_left = 228.333
+offset_top = 11.6667
+offset_right = 354.333
+offset_bottom = -25.7653
 grow_horizontal = 1
 grow_vertical = 1
 text = "ventana"
@@ -187,7 +196,11 @@ theme_override_constants/separation = 40
 
 [node name="facil2" parent="panel_game/dificultad/HBoxContainer" instance=ExtResource("7_oiomh")]
 layout_mode = 2
+texture_normal = null
+texture_pressed = null
+texture_hover = null
 stretch_mode = 0
+script = null
 
 [node name="label" parent="panel_game/dificultad/HBoxContainer/facil2" instance=ExtResource("8_5f8vx")]
 layout_mode = 1
@@ -196,10 +209,10 @@ anchor_left = -0.232
 anchor_top = 0.0
 anchor_right = 1.134
 anchor_bottom = 1.096
-offset_left = 140.072
-offset_top = 11.0
-offset_right = -113.964
-offset_bottom = -20.528
+offset_left = 145.239
+offset_top = -4.76196
+offset_right = 223.239
+offset_bottom = -36.29
 grow_horizontal = 1
 grow_vertical = 1
 theme_override_colors/font_color = Color(0.121893, 0.653399, 0.0416293, 1)
@@ -208,6 +221,10 @@ text = "facil"
 
 [node name="normal2" parent="panel_game/dificultad/HBoxContainer" instance=ExtResource("7_oiomh")]
 layout_mode = 2
+texture_normal = null
+texture_pressed = null
+texture_hover = null
+script = null
 
 [node name="label" parent="panel_game/dificultad/HBoxContainer/normal2" instance=ExtResource("8_5f8vx")]
 layout_mode = 1
@@ -216,10 +233,10 @@ anchor_left = -0.232
 anchor_top = 0.0
 anchor_right = 1.134
 anchor_bottom = 1.096
-offset_left = 136.072
-offset_top = 13.0
-offset_right = -87.9639
-offset_bottom = -21.528
+offset_left = 298.096
+offset_top = -2.381
+offset_right = 406.096
+offset_bottom = -36.909
 grow_horizontal = 1
 grow_vertical = 1
 theme_override_colors/font_color = Color(0.937255, 0.470588, 0.113725, 1)
@@ -229,6 +246,10 @@ text = "normal"
 
 [node name="dificil2" parent="panel_game/dificultad/HBoxContainer" instance=ExtResource("7_oiomh")]
 layout_mode = 2
+texture_normal = null
+texture_pressed = null
+texture_hover = null
+script = null
 
 [node name="label" parent="panel_game/dificultad/HBoxContainer/dificil2" instance=ExtResource("8_5f8vx")]
 layout_mode = 1
@@ -237,35 +258,15 @@ anchor_left = -0.232
 anchor_top = 0.0
 anchor_right = 1.134
 anchor_bottom = 1.096
-offset_left = 138.405
-offset_top = 13.0
-offset_right = -102.631
-offset_bottom = -16.528
+offset_left = 500.953
+offset_top = -4.95911e-05
+offset_right = 590.953
+offset_bottom = -29.528
 grow_horizontal = 1
 grow_vertical = 1
 theme_override_colors/font_color = Color(0.913725, 0.113725, 0.113725, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0.0784314, 1)
 text = "dificil"
-
-[node name="multiplayer" parent="panel_game" instance=ExtResource("2_mqi07")]
-layout_mode = 1
-offset_left = 32.6667
-offset_top = 45.1667
-offset_right = 226.667
-offset_bottom = 109.167
-theme_override_colors/font_color = Color(1, 1, 1, 0.529412)
-theme_override_font_sizes/font_size = 20
-text = "multijugador"
-
-[node name="Label" parent="panel_game/multiplayer" instance=ExtResource("2_mqi07")]
-layout_mode = 1
-offset_left = -190.333
-offset_top = -17.0
-offset_right = 198.667
-offset_bottom = 128.0
-theme_override_colors/font_color = Color(0.980392, 0.2, 0.258824, 0.756863)
-theme_override_font_sizes/font_size = 30
-text = "proximamente"
 
 [node name="tutorial" parent="panel_game" instance=ExtResource("2_mqi07")]
 layout_mode = 1
@@ -302,6 +303,10 @@ offset_left = -388.0
 offset_top = 118.0
 offset_right = -142.0
 offset_bottom = 186.0
+texture_normal = null
+texture_pressed = null
+texture_hover = null
+script = null
 
 [node name="label" parent="btn_atras2" instance=ExtResource("8_5f8vx")]
 layout_mode = 1
@@ -324,6 +329,10 @@ offset_left = 139.0
 offset_top = 118.0
 offset_right = 385.0
 offset_bottom = 186.0
+texture_normal = null
+texture_pressed = null
+texture_hover = null
+script = null
 
 [node name="label" parent="btn_aceptar" instance=ExtResource("8_5f8vx")]
 layout_mode = 1
@@ -342,7 +351,6 @@ text = "ACEPTAR"
 
 [node name="option" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_vbf1p")
-bus = &"Music"
 
 [connection signal="pressed" from="panel_game/pantalla/HBoxContainer/btn_completa2" to="." method="_on_btn_completa_2_pressed"]
 [connection signal="pressed" from="panel_game/pantalla/HBoxContainer/btn_ventana2" to="." method="_on_btn_ventana_2_pressed"]
