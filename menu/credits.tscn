@@ -103,6 +103,10 @@ offset_left = 346.0
 offset_top = 472.0
 offset_right = 592.0
 offset_bottom = 540.0
+texture_normal = null
+texture_pressed = null
+texture_hover = null
+script = null
 
 [node name="label" parent="button" instance=ExtResource("2_drpar")]
 layout_mode = 1
@@ -139,21 +143,21 @@ theme_override_colors/font_color = Color(0.870588, 0.901961, 0.2, 1)
 theme_override_colors/font_shadow_color = Color(0.00751745, 0.00248112, 4.22468e-05, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-text = "ESCAPE DE AORIUM
+text = "EL MEJOR BOTÓN
 
 - equipo-
-eter
+epsilon
 
 - Programación -
 Heber Alonso
 Lucia Alonso
-Violeta Mortarini
+
 
 - Arte 2D - 
 Ramiro Alonso
 
 - Sonido -
-Julio Marino
+Ramiro Alonso
 
 - Agradecimientos -
 DVBAHIA por el espacio 
@@ -164,9 +168,7 @@ FLOR  -   Hernán
 Gonza -  Luján
 Dante
 
-- MENTORES -
-EMA - CARO
-  PERPETUA
+
 
 
 - gracias totales -

@@ -14,17 +14,17 @@ func _ready() -> void:
 func _on_play_pressed() -> void:
 	IniciaVariables.reiniciarVariables()
 	if GlobalMundo.tutorial:
-		CambioStage.cambiar_escena(\"res://scenes/menu/tutorial.tscn\")
+		CambioStage.cambiar_escena(\"res://menu/tutorial.tscn\")
 	else:
 		CambioStage.cambiar_escena(\"res://scenes/main_scene.tscn\")
 	
 	#get_tree().change_scene_to_file(\"res://scenes/main_scene.tscn\")
 
 func _on_options_pressed() -> void:	
-	CambioStage.cambiar_escena(\"res://scenes/menu/options.tscn\")
+	CambioStage.cambiar_escena(\"res://menu/options.tscn\")
 
 func _on_credits_pressed() -> void:
-	CambioStage.cambiar_escena(\"res://scenes/menu/credits.tscn\")
+	CambioStage.cambiar_escena(\"res://menu/credits.tscn\")
 	# Tu código para créditos aquí
 
 func _on_exit_pressed() -> void:

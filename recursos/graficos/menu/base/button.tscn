@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://u5hvva40qljd"]
 
-[ext_resource type="Texture2D" uid="uid://d0fhgqab5xo1v" path="res://assets/graphics/menu_graphics/botonnormal.png" id="1_fne67"]
-[ext_resource type="Texture2D" uid="uid://duvkr8hlihudf" path="res://assets/graphics/menu_graphics/botonapretado.png" id="2_2s6vn"]
-[ext_resource type="Texture2D" uid="uid://8vjtatpley3n" path="res://assets/graphics/menu_graphics/botonfijado.png" id="3_xusyj"]
-[ext_resource type="AudioStream" uid="uid://wr31qbcajp16" path="res://assets/sound/menus_effects/Fx_ButtonClick.mp3" id="4_fne67"]
-[ext_resource type="Script" uid="uid://kstrfpft5t6x" path="res://scripts/menu/button.gd" id="4_xusyj"]
-[ext_resource type="AudioStream" uid="uid://dl8ejgnofnbqi" path="res://assets/sound/menus_effects/Fx_ButtonOver.mp3" id="6_n7hxd"]
+[ext_resource type="Texture2D" uid="uid://4vtj1rtgeud4" path="res://recursos/graficos/menu/boton/botonnormal.png" id="1_fne67"]
+[ext_resource type="Texture2D" uid="uid://rlakq413vmhv" path="res://recursos/graficos/menu/boton/botonapretado.png" id="2_2s6vn"]
+[ext_resource type="Texture2D" uid="uid://ewlbl7xvw8hk" path="res://recursos/graficos/menu/boton/botonfijado.png" id="3_xusyj"]
+[ext_resource type="AudioStream" uid="uid://c8nmpa8rcm7di" path="res://recursos/sonido/Fx_ButtonClick.mp3" id="4_fne67"]
+[ext_resource type="Script" uid="uid://dc4yas2qjrs70" path="res://menu/button.gd" id="4_xusyj"]
+[ext_resource type="AudioStream" uid="uid://bksolobx6aycv" path="res://recursos/sonido/Fx_ButtonOver.mp3" id="6_n7hxd"]
 
 [node name="button" type="TextureButton"]
 anchors_preset = 5
@@ -27,12 +27,10 @@ stream = ExtResource("4_fne67")
 volume_db = 2.943
 pitch_scale = 4.0
 autoplay = true
-bus = &"Effects"
 
 [node name="over" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_n7hxd")
 volume_db = 3.925
 pitch_scale = 2.02
-bus = &"Effects"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

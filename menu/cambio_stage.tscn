@@ -1,0 +1,200 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvhh87u273svl"]
+
+[ext_resource type="Script" uid="uid://pkqknmbxd27n" path="res://menu/cambio_stage.gd" id="1_lj3t2"]
+[ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://recursos/graficos/menu/base/label.tscn" id="2_lj3t2"]
+[ext_resource type="Texture2D" uid="uid://jd5x051tk8nc" path="res://recursos/graficos/ikurosofttrans.png" id="3_yr72j"]
+[ext_resource type="AudioStream" uid="uid://6hdon4x28c66" path="res://recursos/sonido/Fx_Pantalla_Stage.mp3" id="4_do10i"]
+
+[sub_resource type="Animation" id="Animation_lj3t2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3wq8u"]
+resource_name = "transicion"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.33333, 3.23333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yr72j"]
+resource_name = "transicion_simple"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yr72j"]
+_data = {
+&"RESET": SubResource("Animation_lj3t2"),
+&"transicion": SubResource("Animation_3wq8u"),
+&"transicion_simple": SubResource("Animation_yr72j")
+}
+
+[node name="CambioStage" type="CanvasLayer"]
+script = ExtResource("1_lj3t2")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 11.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.992958, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 120.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.964706, 0.364706, 0.866667, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/PanelContainer"]
+layout_mode = 2
+
+[node name="label" parent="ColorRect/PanelContainer/VBoxContainer" instance=ExtResource("2_lj3t2")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "stage 1"
+
+[node name="info_stage" parent="ColorRect/PanelContainer/VBoxContainer" instance=ExtResource("2_lj3t2")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "cambios de factores"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 98.0
+offset_right = 5.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 78
+
+[node name="gravedad" type="VBoxContainer" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="label" parent="ColorRect/HBoxContainer/gravedad" instance=ExtResource("2_lj3t2")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "fuerza de gravedad"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer/gravedad"]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+texture = ExtResource("3_yr72j")
+stretch_mode = 5
+
+[node name="viento" type="VBoxContainer" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="label" parent="ColorRect/HBoxContainer/viento" instance=ExtResource("2_lj3t2")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "fuerza del viento"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer/viento"]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+texture = ExtResource("3_yr72j")
+stretch_mode = 5
+
+[node name="direccion" type="VBoxContainer" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="label" parent="ColorRect/HBoxContainer/direccion" instance=ExtResource("2_lj3t2")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "direccion del viento"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer/direccion"]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+texture = ExtResource("3_yr72j")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_yr72j")
+}
+
+[node name="stage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_do10i")

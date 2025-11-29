@@ -9,12 +9,12 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
+	get_tree().change_scene_to_file("res://menu/menu.tscn")
 
 
 
 func _on_animation_player_animation_finished() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
+	get_tree().change_scene_to_file("res://menu/menu.tscn")
 
 func tiempo():
 	credit = Timer.new()

@@ -68,35 +68,5 @@ var estados = {
 
 
 
-func ataque_aerux():
-	var cant_artefacto = min(GlobalPlayer.artefacto, 5) # maximo 5 (4artefactos)
-	if GlobalEnemy.dificultad == 3:
-		var rango = RandomNumberGenerator.new()
-		# sera aleatorio en un rango razonable
-		# cambia la velocidad del viento
-		wind_speed = rango.randf_range(min_wind_speed,max_wind_speed)
-		print("viento velocidad: ", wind_speed)
-		# cambia la direccion del viento
-		var viento_rango = rango.randi_range(0,1)
-		viento = Vector2(viento_rango,0)
-		print("viento direccion: ", viento)
-		# cambia la gravedad
-		f_gravedad= rango.randf_range(min_f_gravedad, max_f_gravedad)
-		print("gravedad: ", f_gravedad)
-		
-	elif GlobalEnemy.dificultad == 1 || GlobalEnemy.dificultad == 2:
-		var estado_actual = estados[GlobalEnemy.dificultad][cant_artefacto] # compara en que dificultad estamos y revisa en que artefacto para poner la dificultad de ese stage
-		
-		wind_speed = estado_actual["wind_speed"]
-		print("viento velocidad: ", wind_speed)
-		
-		var viento_rango = estado_actual["viento_rango"]
-		viento = Vector2(viento_rango, 0)
-		print("viento direccion: ", viento)
-		
-		f_gravedad = estado_actual["f_gravedad"]
-		print("gravedad: ", f_gravedad)
-	else:
-		pass 
-			
+
 		

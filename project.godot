@@ -20,6 +20,16 @@ config/icon="res://icon.svg"
 
 GlobalMundo="*res://GlobalMundo.gd"
 IniciaVariables="*res://inicia_variables.gd"
+SignalBus="*res://SignalBus.gd"
+GlobalPlayer="*res://global_player.gd"
+CambioStage="*res://menu/cambio_stage.gd"
+GlobalAudio="*res://global_audio.gd"
+GlobalEnemy="*res://GlobalEnemy.gd"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
 
 [rendering]
 
