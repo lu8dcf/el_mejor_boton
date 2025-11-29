@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://s2x4mc1m5sc2"]
+
+[ext_resource type="Texture2D" uid="uid://dhhtwg4oj7bhj" path="res://assets/graphics/menu_graphics/background/pantalla_perder.png" id="1_7h0v0"]
+[ext_resource type="Script" uid="uid://n12gjilvgisx" path="res://scripts/menu/lost.gd" id="1_rvxhp"]
+[ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://scenes/menu/base/button.tscn" id="3_m87c1"]
+[ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://scenes/menu/base/label.tscn" id="4_ju5ow"]
+[ext_resource type="AudioStream" uid="uid://b81yh1u1hjo1u" path="res://assets/sound/sound_effects/Fx_Derrota.mp3" id="5_m87c1"]
+
+[node name="lost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rvxhp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7h0v0")
+
+[node name="button" parent="." instance=ExtResource("3_m87c1")]
+layout_mode = 1
+offset_left = -477.0
+offset_top = 468.0
+offset_right = -231.0
+offset_bottom = 536.0
+
+[node name="label" parent="button" instance=ExtResource("4_ju5ow")]
+layout_mode = 1
+offset_left = -93.0
+offset_top = -14.0
+offset_right = 93.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 14
+text = "volver a intentar"
+
+[node name="lost" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_m87c1")
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]

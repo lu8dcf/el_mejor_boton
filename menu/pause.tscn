@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://cc5damnqi1gum"]
+
+[ext_resource type="Script" uid="uid://demhxgc65v2yr" path="res://scripts/menu/pause.gd" id="1_4wejy"]
+[ext_resource type="Shader" uid="uid://r621tvcnd0ql" path="res://shaders/pause_blur_shaders.gdshader" id="2_r8yp4"]
+[ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://scenes/menu/base/button.tscn" id="3_1mso8"]
+[ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://scenes/menu/base/label.tscn" id="4_20ey2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0klm"]
+shader = ExtResource("2_r8yp4")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_cg718"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_overlay:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ftjbs"]
+resource_name = "pause_blur"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_overlay:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_cy2kx"]
+resource_name = "resume_pause_blur"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_overlay:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4om0x"]
+_data = {
+&"RESET": SubResource("Animation_cg718"),
+&"pause_blur": SubResource("Animation_ftjbs"),
+&"resume_pause_blur": SubResource("Animation_cy2kx")
+}
+
+[node name="Pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.62714, 1.62714)
+script = ExtResource("1_4wejy")
+
+[node name="blur_pausa" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="bg_overlay" type="ColorRect" parent="blur_pausa"]
+material = SubResource("ShaderMaterial_m0klm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="sound_pause_off" type="AudioStreamPlayer2D" parent="blur_pausa/bg_overlay"]
+position = Vector2(436, 253)
+scale = Vector2(1.62714, 1.62714)
+
+[node name="sound_pause_on" type="AudioStreamPlayer2D" parent="blur_pausa/bg_overlay"]
+position = Vector2(436, 253)
+scale = Vector2(1.62714, 1.62714)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="blur_pausa/bg_overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -142.0
+offset_right = 123.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="regresar" parent="blur_pausa/bg_overlay/VBoxContainer2" instance=ExtResource("3_1mso8")]
+layout_mode = 2
+
+[node name="label" parent="blur_pausa/bg_overlay/VBoxContainer2/regresar" instance=ExtResource("4_20ey2")]
+layout_mode = 1
+offset_left = -72.0
+offset_top = -18.0
+offset_right = 72.0
+offset_bottom = 18.0
+text = "regresar"
+
+[node name="menu" parent="blur_pausa/bg_overlay/VBoxContainer2" instance=ExtResource("3_1mso8")]
+layout_mode = 2
+
+[node name="label" parent="blur_pausa/bg_overlay/VBoxContainer2/menu" instance=ExtResource("4_20ey2")]
+layout_mode = 1
+offset_left = -36.0
+offset_top = -18.0
+offset_right = 36.0
+offset_bottom = 18.0
+text = "menu"
+
+[node name="reiniciar" parent="blur_pausa/bg_overlay/VBoxContainer2" instance=ExtResource("3_1mso8")]
+layout_mode = 2
+
+[node name="label" parent="blur_pausa/bg_overlay/VBoxContainer2/reiniciar" instance=ExtResource("4_20ey2")]
+layout_mode = 1
+offset_left = -63.0
+offset_top = -18.0
+offset_right = 63.0
+offset_bottom = 18.0
+text = "reiniciar"
+
+[node name="opciones" parent="blur_pausa/bg_overlay/VBoxContainer2" instance=ExtResource("3_1mso8")]
+visible = false
+layout_mode = 2
+
+[node name="label" parent="blur_pausa/bg_overlay/VBoxContainer2/opciones" instance=ExtResource("4_20ey2")]
+layout_mode = 1
+offset_left = -66.0
+offset_top = -18.0
+offset_right = 66.0
+offset_bottom = 18.0
+text = "opciones"
+
+[node name="animator" type="AnimationPlayer" parent="blur_pausa"]
+libraries = {
+&"": SubResource("AnimationLibrary_4om0x")
+}
+
+[connection signal="pressed" from="blur_pausa/bg_overlay/VBoxContainer2/regresar" to="." method="_on_regresar_pressed"]
+[connection signal="pressed" from="blur_pausa/bg_overlay/VBoxContainer2/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="blur_pausa/bg_overlay/VBoxContainer2/reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="blur_pausa/bg_overlay/VBoxContainer2/opciones" to="." method="_on_opciones_pressed"]

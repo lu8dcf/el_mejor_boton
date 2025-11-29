@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://s8unk3jr1cle"]
+
+[ext_resource type="Script" uid="uid://bxdqaaoed8rid" path="res://scripts/menu/won.gd" id="1_4k8xc"]
+[ext_resource type="Texture2D" uid="uid://da6q4rnqts40h" path="res://assets/graphics/menu_graphics/background/pantalla_ganar.png" id="1_atjv4"]
+[ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://scenes/menu/base/button.tscn" id="3_uk3s7"]
+[ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://scenes/menu/base/label.tscn" id="4_fo7bq"]
+[ext_resource type="AudioStream" uid="uid://j2v5bkx6wu5l" path="res://assets/sound/sound_effects/Fx_Victoria3.mp3" id="5_uk3s7"]
+
+[node name="Won" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4k8xc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_atjv4")
+
+[node name="button" parent="." instance=ExtResource("3_uk3s7")]
+z_index = 12
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+offset_bottom = -19.0
+grow_vertical = 0
+
+[node name="label" parent="button" instance=ExtResource("4_fo7bq")]
+layout_mode = 1
+offset_left = -92.0
+offset_top = -14.0
+offset_right = 94.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 14
+text = "volver a intentar"
+
+[node name="won" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_uk3s7")
+autoplay = true
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]

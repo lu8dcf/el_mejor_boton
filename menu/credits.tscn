@@ -1,0 +1,227 @@
+[gd_scene load_steps=11 format=3 uid="uid://cj0jng1gmod8a"]
+
+[ext_resource type="Texture2D" uid="uid://bt38t7ue3q2k5" path="res://assets/graphics/menu_graphics/paracreditos1.png" id="1_0l22u"]
+[ext_resource type="Script" uid="uid://2km5l31aqs3t" path="res://scripts/menu/credits.gd" id="1_drpar"]
+[ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://scenes/menu/base/label.tscn" id="2_drpar"]
+[ext_resource type="Texture2D" uid="uid://1ria67v44qyn" path="res://assets/graphics/menu_graphics/paracreditos2.png" id="3_0s65u"]
+[ext_resource type="AudioStream" uid="uid://bmpts71d7ncp" path="res://assets/sound/menus_effects/AUDIO_IDEA_MT.mp3" id="5_0s65u"]
+[ext_resource type="Texture2D" uid="uid://0xnc0vsr83mw" path="res://assets/foto/credito.jpeg" id="6_wobx1"]
+[ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://scenes/menu/base/button.tscn" id="7_oh8hr"]
+
+[sub_resource type="Animation" id="Animation_oh8hr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/label2:visible_characters")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wobx1"]
+resource_name = "creditos"
+length = 55.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/label2:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 55.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 82), Vector2(0, -2110)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ev03l"]
+_data = {
+&"RESET": SubResource("Animation_oh8hr"),
+&"creditos": SubResource("Animation_wobx1")
+}
+
+[node name="credits" type="Node2D"]
+script = ExtResource("1_drpar")
+
+[node name="button" parent="." instance=ExtResource("7_oh8hr")]
+z_index = 11
+offset_left = 346.0
+offset_top = 472.0
+offset_right = 592.0
+offset_bottom = 540.0
+
+[node name="label" parent="button" instance=ExtResource("2_drpar")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.232
+anchor_top = 0.0
+anchor_right = 1.134
+anchor_bottom = 1.096
+offset_left = 127.072
+offset_top = 14.0
+offset_right = -64.964
+offset_bottom = -24.528
+grow_horizontal = 1
+grow_vertical = 1
+text = "cerrar"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="label2" parent="Node2D" instance=ExtResource("2_drpar")]
+z_index = 6
+anchors_preset = -1
+anchor_left = -0.232
+anchor_top = 0.0
+anchor_right = 1.134
+anchor_bottom = 1.096
+offset_left = 113.0
+offset_top = 160.0
+offset_right = 528.0
+offset_bottom = 1561.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(1.76, 1.76)
+theme_override_colors/font_color = Color(0.870588, 0.901961, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.00751745, 0.00248112, 4.22468e-05, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "ESCAPE DE AORIUM
+
+- equipo-
+eter
+
+- Programación -
+Heber Alonso
+Lucia Alonso
+Violeta Mortarini
+
+- Arte 2D - 
+Ramiro Alonso
+
+- Sonido -
+Julio Marino
+
+- Agradecimientos -
+DVBAHIA por el espacio 
+y el aporte al videojuego.
+
+- Organizadores -
+FLOR  -   Hernán
+Gonza -  Luján
+Dante
+
+- MENTORES -
+EMA - CARO
+  PERPETUA
+
+
+- gracias totales -
+
+
+
+ikuro game
+
+
+
+"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="FondoMenu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(480, 270)
+texture = ExtResource("1_0l22u")
+
+[node name="Menucontextual" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(475, 270)
+
+[node name="Paracreditos1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(480, 270)
+texture = ExtResource("1_0l22u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ev03l")
+}
+
+[node name="Paracreditos2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(480, 270)
+texture = ExtResource("3_0s65u")
+
+[node name="creditos" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource("5_0s65u")
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(479, 277)
+scale = Vector2(0.455278, 0.455278)
+texture = ExtResource("6_wobx1")
+
+[node name="Paracreditos3" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(480, 269)
+texture = ExtResource("3_0s65u")
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
