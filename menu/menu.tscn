@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b75tgj47m4hhb"]
+[gd_scene load_steps=10 format=3 uid="uid://b75tgj47m4hhb"]
 
 [ext_resource type="PackedScene" uid="uid://dse6mrb4ay8p8" path="res://menu/background.tscn" id="1_037ec"]
 [ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://recursos/graficos/menu/base/button.tscn" id="1_e0arn"]
+[ext_resource type="Texture2D" uid="uid://dob2k32f8hyc7" path="res://recursos/graficos/menu/menu.png" id="1_v6yed"]
 [ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://recursos/graficos/menu/base/label.tscn" id="2_037ec"]
 [ext_resource type="Texture2D" uid="uid://jd5x051tk8nc" path="res://recursos/graficos/ikurosofttrans.png" id="2_y1o0p"]
 [ext_resource type="AudioStream" uid="uid://bgyhq8is25n7p" path="res://recursos/sonido/tema.mp3" id="5_y1o0p"]
@@ -49,6 +50,11 @@ offset_left = -468.0
 offset_top = -295.0
 offset_right = 508.0
 offset_bottom = 257.0
+
+[node name="Menu" type="Sprite2D" parent="PanelContainer"]
+position = Vector2(490, 279)
+scale = Vector2(0.503704, 0.503704)
+texture = ExtResource("1_v6yed")
 
 [node name="Background" parent="PanelContainer" instance=ExtResource("1_037ec")]
 layout_mode = 2
@@ -192,8 +198,8 @@ volume_db = 10.0
 autoplay = true
 
 [node name="Titulo" type="Sprite2D" parent="."]
-position = Vector2(12, -223)
-scale = Vector2(0.215741, 0.215741)
+position = Vector2(-31, -211)
+scale = Vector2(0.284722, 0.284722)
 texture = ExtResource("6_juveg")
 
 [connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
