@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddtdoms7y2q2r"]
+
+[ext_resource type="Script" uid="uid://bh4854a0u1j5a" path="res://scripts/indicador.gd" id="1_7v4k4"]
+
+[node name="Indicador" type="Label"]
+z_index = 10
+offset_right = 160.0
+offset_bottom = 48.0
+script = ExtResource("1_7v4k4")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsonhleg1mvp"]
+
+[ext_resource type="Script" uid="uid://da4ontkupe8qa" path="res://juego/inicia.gd" id="1_3p8kv"]
+[ext_resource type="Texture2D" uid="uid://ck8eagaghbqik" path="res://recursos/graficos/hud/fondohud.png" id="2_wg5jb"]
+[ext_resource type="Texture2D" uid="uid://bcdsq6trh51rl" path="res://recursos/graficos/hud/entornojuego.png" id="3_8m6t5"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_3p8kv")
+
+[node name="Fondohud" type="Sprite2D" parent="."]
+position = Vector2(485.75, 274.5)
+scale = Vector2(0.501302, 0.502778)
+texture = ExtResource("2_wg5jb")
+
+[node name="Entornojuego" type="Sprite2D" parent="."]
+position = Vector2(485, 274)
+scale = Vector2(0.502083, 0.507407)
+texture = ExtResource("3_8m6t5")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://6dg7bxwjo1du"]
 
 [ext_resource type="Script" uid="uid://bdrq8sn7xyxmr" path="res://menu/options.gd" id="1_vrwnq"]
-[ext_resource type="Texture2D" uid="uid://jd5x051tk8nc" path="res://recursos/graficos/ikurosofttrans.png" id="2_lu4uf"]
+[ext_resource type="Texture2D" uid="uid://ck8eagaghbqik" path="res://recursos/graficos/hud/fondohud.png" id="2_61j48"]
 [ext_resource type="PackedScene" uid="uid://c1lmerbku64rs" path="res://recursos/graficos/menu/base/base_label.tscn" id="2_mqi07"]
 [ext_resource type="PackedScene" uid="uid://b44h80jjvjjen" path="res://recursos/graficos/menu/base/base_panel.tscn" id="3_vhbmr"]
 [ext_resource type="Texture2D" uid="uid://1ucyo3mb6t6x" path="res://recursos/graficos/menu/switch_tuto.png" id="7_ilxmy"]
@@ -20,15 +20,19 @@ script = ExtResource("1_vrwnq")
 metadata/_edit_use_anchors_ = true
 
 [node name="FondoMenu" type="Sprite2D" parent="."]
-position = Vector2(878, 108)
-scale = Vector2(0.071, 0.065)
-texture = ExtResource("2_lu4uf")
+position = Vector2(482.21, 271.025)
+scale = Vector2(0.51124, 0.513009)
+texture = ExtResource("2_61j48")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 4.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.180392, 0.180392, 0.180392, 0)

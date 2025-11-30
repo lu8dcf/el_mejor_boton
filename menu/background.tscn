@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dse6mrb4ay8p8"]
 
-[ext_resource type="Texture2D" uid="uid://bw561jd6a1cnq" path="res://assets/graphics/menu_graphics/fondo_menu.png" id="1_n1gru"]
+[ext_resource type="Texture2D" uid="uid://ck8eagaghbqik" path="res://recursos/graficos/hud/fondohud.png" id="1_n1gru"]
 
 [node name="Background" type="Control"]
 layout_mode = 3

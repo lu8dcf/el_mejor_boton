@@ -44,8 +44,8 @@ func _ready():
 	# Cargar configuración existente
 	
 	# Configurar botones de dificultad
-	actualizar_dificultad()
-	actualizar_pantalla()
+	#actualizar_dificultad()
+	#actualizar_pantalla()
 	actualizar_tutorial()
 	actualizar_sonido()
 	update_audio_volume()
@@ -61,8 +61,8 @@ func actualizar_tutorial():
 	var icono = icono_tutorial_on if tutorial else icono_tutorial_off
 	var texto_tuto  = texto_tuto_on if tutorial else texto_tuto_off
 	
-	texto_tutorial.text = texto_tuto
-	switch_tuto.texture_normal=icono
+	#texto_tutorial.text = texto_tuto
+	#switch_tuto.texture_normal=icono
 
 func actualizar_sonido():
 	
@@ -115,19 +115,19 @@ func _on_btn_atras_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://menu/menu.tscn")
 
 
-
-# Pantalla
-func _on_btn_completa_2_pressed() -> void:
-	ventana = false
-	actualizar_pantalla()
-
-func _on_btn_ventana_2_pressed() -> void:
-	ventana = true
-	actualizar_pantalla()
+#
+## Pantalla
+#func _on_btn_completa_2_pressed() -> void:
+	#ventana = false
+	#actualizar_pantalla()
+#
+#func _on_btn_ventana_2_pressed() -> void:
+	#ventana = true
+	#actualizar_pantalla()
 	
-func actualizar_pantalla():
-	btn_pantalla.button_pressed = not ventana
-	btn_ventana.button_pressed = ventana
+#func actualizar_pantalla():
+	#btn_pantalla.button_pressed = not ventana
+	#btn_ventana.button_pressed = ventana
 
 func aplicar_modo_pantalla():
 	pass
@@ -145,32 +145,32 @@ func aplicar_modo_pantalla():
 	
 
 # Dificultad -------------------------------------------------
-func _on_facil_2_pressed() -> void:
-	dificultad = 1
-	actualizar_dificultad()
+#func _on_facil_2_pressed() -> void:
+	#dificultad = 1
+	#actualizar_dificultad()
+#
+#func _on_normal_2_pressed() -> void:
+	#dificultad = 2
+	#actualizar_dificultad()
+#
+#func _on_dificil_2_pressed() -> void:
+	#dificultad = 3
+	#actualizar_dificultad()
 
-func _on_normal_2_pressed() -> void:
-	dificultad = 2
-	actualizar_dificultad()
-
-func _on_dificil_2_pressed() -> void:
-	dificultad = 3
-	actualizar_dificultad()
-
-func actualizar_dificultad():
-	## Deseleccionar todos los botones primero
-	btn_facil.button_pressed = false
-	btn_normal.button_pressed = false
-	btn_dificil.button_pressed = false
-	#
-	## Seleccionar el botón correspondiente a la dificultad actual
-	match dificultad:
-		1:
-			btn_facil.button_pressed = true
-		2:
-			btn_normal.button_pressed = true
-		3:
-			btn_dificil.button_pressed = true
+#func actualizar_dificultad():
+	### Deseleccionar todos los botones primero
+	#btn_facil.button_pressed = false
+	#btn_normal.button_pressed = false
+	#btn_dificil.button_pressed = false
+	##
+	### Seleccionar el botón correspondiente a la dificultad actual
+	#match dificultad:
+		#1:
+			#btn_facil.button_pressed = true
+		#2:
+			#btn_normal.button_pressed = true
+		#3:
+			#btn_dificil.button_pressed = true
 
 
 #Grabar --------------------------------------

@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b75tgj47m4hhb"]
+[gd_scene load_steps=9 format=3 uid="uid://b75tgj47m4hhb"]
 
 [ext_resource type="PackedScene" uid="uid://dse6mrb4ay8p8" path="res://menu/background.tscn" id="1_037ec"]
 [ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://recursos/graficos/menu/base/button.tscn" id="1_e0arn"]
-[ext_resource type="Texture2D" uid="uid://dob2k32f8hyc7" path="res://recursos/graficos/menu/menu.png" id="1_v6yed"]
 [ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://recursos/graficos/menu/base/label.tscn" id="2_037ec"]
 [ext_resource type="Texture2D" uid="uid://jd5x051tk8nc" path="res://recursos/graficos/ikurosofttrans.png" id="2_y1o0p"]
+[ext_resource type="Texture2D" uid="uid://c28p816mqdn4n" path="res://recursos/graficos/menu/boton/botoncancelado.png" id="4_juveg"]
 [ext_resource type="AudioStream" uid="uid://bgyhq8is25n7p" path="res://recursos/sonido/tema.mp3" id="5_y1o0p"]
-[ext_resource type="Texture2D" uid="uid://bwpkst7cdviea" path="res://recursos/graficos/menu/titulo.png" id="6_juveg"]
 
 [sub_resource type="GDScript" id="GDScript_037ec"]
 script/source = "extends Control
@@ -18,7 +17,7 @@ func _on_play_pressed() -> void:
 	if GlobalMundo.tutorial:
 		CambioStage.cambiar_escena(\"res://menu/tutorial.tscn\")
 	else:
-		CambioStage.cambiar_escena(\"res://scenes/main_scene.tscn\")
+		CambioStage.cambiar_escena(\"res://juego/inicia.tscn\")
 	
 	#get_tree().change_scene_to_file(\"res://scenes/main_scene.tscn\")
 
@@ -51,17 +50,12 @@ offset_top = -295.0
 offset_right = 508.0
 offset_bottom = 257.0
 
-[node name="Menu" type="Sprite2D" parent="PanelContainer"]
-position = Vector2(490, 279)
-scale = Vector2(0.503704, 0.503704)
-texture = ExtResource("1_v6yed")
-
 [node name="Background" parent="PanelContainer" instance=ExtResource("1_037ec")]
 layout_mode = 2
 
 [node name="Planeta" type="Sprite2D" parent="."]
-position = Vector2(418, -218)
-scale = Vector2(0.072, 0.072)
+position = Vector2(382, -188)
+scale = Vector2(0.122625, 0.0955)
 texture = ExtResource("2_y1o0p")
 
 [node name="Panel" type="Panel" parent="."]
@@ -87,9 +81,7 @@ offset_top = -2.356
 offset_right = -0.132019
 offset_bottom = 9.45499
 grow_horizontal = 1
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/play" instance=ExtResource("2_037ec")]
@@ -114,9 +106,7 @@ anchor_bottom = 0.5
 offset_top = -61.0
 offset_bottom = 7.0
 grow_vertical = 2
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/options" instance=ExtResource("2_037ec")]
@@ -139,9 +129,7 @@ offset_top = -40.495
 offset_right = -0.131989
 offset_bottom = -46.134
 grow_vertical = 0
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/credits" instance=ExtResource("2_037ec")]
@@ -164,9 +152,7 @@ offset_top = 67.059
 offset_right = -1.32904
 offset_bottom = 61.42
 grow_vertical = 0
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/exit" instance=ExtResource("2_037ec")]
@@ -178,7 +164,6 @@ offset_bottom = 18.0
 text = "salir"
 
 [node name="label" parent="." instance=ExtResource("2_037ec")]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_top = 0.0
@@ -196,11 +181,6 @@ text = "El Mejor Botón"
 stream = ExtResource("5_y1o0p")
 volume_db = 10.0
 autoplay = true
-
-[node name="Titulo" type="Sprite2D" parent="."]
-position = Vector2(-31, -211)
-scale = Vector2(0.284722, 0.284722)
-texture = ExtResource("6_juveg")
 
 [connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/options" to="." method="_on_options_pressed"]
