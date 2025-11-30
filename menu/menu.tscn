@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b75tgj47m4hhb"]
+[gd_scene load_steps=9 format=3 uid="uid://b75tgj47m4hhb"]
 
-[ext_resource type="PackedScene" path="res://menu/background.tscn" id="1_037ec"]
+[ext_resource type="PackedScene" uid="uid://dse6mrb4ay8p8" path="res://menu/background.tscn" id="1_037ec"]
 [ext_resource type="PackedScene" uid="uid://u5hvva40qljd" path="res://recursos/graficos/menu/base/button.tscn" id="1_e0arn"]
 [ext_resource type="PackedScene" uid="uid://7jxf3smhtulo" path="res://recursos/graficos/menu/base/label.tscn" id="2_037ec"]
 [ext_resource type="Texture2D" uid="uid://jd5x051tk8nc" path="res://recursos/graficos/ikurosofttrans.png" id="2_y1o0p"]
+[ext_resource type="Texture2D" uid="uid://c28p816mqdn4n" path="res://recursos/graficos/menu/boton/botoncancelado.png" id="4_juveg"]
 [ext_resource type="AudioStream" uid="uid://bgyhq8is25n7p" path="res://recursos/sonido/tema.mp3" id="5_y1o0p"]
 
 [sub_resource type="GDScript" id="GDScript_037ec"]
@@ -16,7 +17,7 @@ func _on_play_pressed() -> void:
 	if GlobalMundo.tutorial:
 		CambioStage.cambiar_escena(\"res://menu/tutorial.tscn\")
 	else:
-		CambioStage.cambiar_escena(\"res://scenes/main_scene.tscn\")
+		CambioStage.cambiar_escena(\"res://juego/inicia.tscn\")
 	
 	#get_tree().change_scene_to_file(\"res://scenes/main_scene.tscn\")
 
@@ -80,9 +81,7 @@ offset_top = -2.356
 offset_right = -0.132019
 offset_bottom = 9.45499
 grow_horizontal = 1
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/play" instance=ExtResource("2_037ec")]
@@ -107,9 +106,7 @@ anchor_bottom = 0.5
 offset_top = -61.0
 offset_bottom = 7.0
 grow_vertical = 2
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/options" instance=ExtResource("2_037ec")]
@@ -132,9 +129,7 @@ offset_top = -40.495
 offset_right = -0.131989
 offset_bottom = -46.134
 grow_vertical = 0
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/credits" instance=ExtResource("2_037ec")]
@@ -157,9 +152,7 @@ offset_top = 67.059
 offset_right = -1.32904
 offset_bottom = 61.42
 grow_vertical = 0
-texture_normal = null
-texture_pressed = null
-texture_hover = null
+texture_disabled = ExtResource("4_juveg")
 script = null
 
 [node name="label" parent="Panel/exit" instance=ExtResource("2_037ec")]

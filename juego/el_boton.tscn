@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://kri6ye6kuo7y"]
+
+[ext_resource type="Texture2D" uid="uid://d3syt33pu4pbb" path="res://recursos/graficos/hud/boton.png" id="1_3q6ut"]
+[ext_resource type="Script" uid="uid://c2bh47u57pdmq" path="res://juego/el_boton.gd" id="1_cc148"]
+[ext_resource type="AudioStream" uid="uid://b88mhvmu16a83" path="res://recursos/sonido/Fx_Golpe.mp3" id="2_nf5fq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc148"]
+size = Vector2(113, 25)
+
+[sub_resource type="Animation" id="Animation_o15a1"]
+resource_name = "pulsar"
+length = 1.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_411ap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_y738d"]
+resource_name = "soltar"
+length = 1.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f02nd"]
+_data = {
+&"RESET": SubResource("Animation_411ap"),
+&"pulsar": SubResource("Animation_o15a1"),
+&"soltar": SubResource("Animation_y738d")
+}
+
+[node name="el_boton" type="Area2D"]
+script = ExtResource("1_cc148")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(483.5, 529)
+shape = SubResource("RectangleShape2D_cc148")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(484, 458)
+scale = Vector2(0.467949, 0.427388)
+texture = ExtResource("1_3q6ut")
+hframes = 5
+vframes = 4
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nf5fq")
+volume_db = 4.457
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f02nd")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
